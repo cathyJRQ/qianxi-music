@@ -1,0 +1,290 @@
+html {
+  font-size: 100px;
+}
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+@keyframes musicMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1620px);
+  }
+}
+@keyframes musicMoveA {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+#app {
+  position: relative;
+  margin: 0 auto;
+  font-size: 0.14rem;
+}
+/* 通用样式 */
+.loading-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  background: #555;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loading-box .content img,
+.loading-box .content span {
+  display: block;
+}
+.loading-box .content img {
+  margin: 0 auto;
+  width: 0.5rem;
+  height: 0.5rem;
+}
+.loading-box .content span {
+  margin-top: 0.1rem;
+  color: #1989fa;
+}
+.headerBox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  box-sizing: border-box;
+  height: 0.5rem;
+  padding: 0.1rem;
+  overflow: hidden;
+  background: linear-gradient(rgba(0, 0, 0, 0.3) 60%, transparent);
+}
+.headerBoxTop {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.headerBoxTop .line {
+  width: 100%;
+  position: absolute;
+  bottom: -0.1rem;
+  left: 0;
+  height: 0.01rem;
+  background-color: rgba(237, 237, 237, 0.2);
+}
+.headerBoxTop .headerleft {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.headerBoxTop .headerleft .headerleftImg {
+  width: 0.28rem;
+  border-radius: 50%;
+}
+.headerBoxTop .headerleft p {
+  margin-left: 0.08rem;
+  font-size: 0.13rem;
+  color: #fff;
+}
+.headerBoxTop .headerright {
+  box-sizing: border-box;
+  width: 0.89rem;
+  height: 0.3rem;
+  padding: 0.1rem;
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(237, 237, 237, 0.2);
+  border-radius: 1rem;
+}
+.headerBoxTop .headerright p {
+  font-size: 0.13rem;
+  color: #fff;
+  margin-right: 0.05rem;
+}
+.headerBoxTop .headerright .Rightarrow {
+  width: 0.1rem;
+}
+.Mask-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.Mask-image {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+}
+.Mask-image {
+  z-index: -2;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: blur(0.4rem);
+}
+.Mask-overlay {
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.6);
+}
+.music {
+  width: 100%;
+  height: 4.7rem;
+  padding-top: 70px;
+}
+.move {
+  animation: musicMoveA 10s linear 0s infinite;
+}
+.movemin {
+  animation: musicMove 1s steps(81) infinite;
+}
+.Bejin {
+  position: relative;
+  width: 100%;
+  height: 2.9rem;
+}
+.Bejin .dishBox,
+.Bejin .dishImg,
+.Bejin .playaudio,
+.Bejin .Bejinimg {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+}
+.Bejin .Bejinimg {
+  position: absolute;
+}
+.Bejin .dishBox {
+  z-index: 3;
+  border-radius: 100rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Bejin .dish {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+.Bejin .dishImgA {
+  position: absolute;
+  left: 58%;
+  top: 1%;
+  transform: translate(-50%, -50%);
+}
+.Bejin .dishImgA {
+  z-index: 3;
+  width: 0.7rem;
+}
+.Bejin .dishImg {
+  z-index: 2;
+  width: 2.6rem;
+  height: 2.6rem;
+}
+.Bejin .playaudio {
+  z-index: 5;
+  width: 0.56rem;
+}
+.musicText {
+  width: 100%;
+  height: 0.76rem;
+}
+.together {
+  width: 100%;
+  height: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.together p {
+  font-size: 0.14rem;
+  margin: 0 0.04rem;
+  color: hsla(0, 0%, 100%, 0.8);
+}
+.together .you {
+  width: 0.15rem;
+}
+.animationBox {
+  width: 0.2rem;
+  height: 0.2rem;
+  overflow: hidden;
+}
+.animation {
+  height: 20px;
+}
+/* 歌词区域样式 */
+.musicItem {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 35px;
+  margin-bottom: 10px;
+}
+.musicItem .musicName {
+  margin-bottom: 14px;
+}
+.musicItem .musicName h3 {
+  font-size: 18px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #fff;
+}
+.musicItem .main-box {
+  overflow: hidden;
+}
+.musicItem .main-box .musicText {
+  transform: translateY(0);
+  transition: transform 0.3s;
+  height: 0.5rem;
+}
+.musicItem .main-box .musicText div {
+  line-height: 0.5rem;
+  height: 0.5rem;
+}
+.musicItem .main-box .musicText div p {
+  height: 0.2rem;
+  line-height: 0.2rem;
+  text-align: center;
+  font-size: 0.16rem;
+  color: #fff;
+}
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn .open,
+.btn .Download {
+  width: 173px;
+  height: 42px;
+  text-align: center;
+  line-height: 42px;
+  font-size: 18px;
+  border-radius: 40px;
+}
+.btn .open {
+  color: #ff3a3a;
+  border: 1px solid #ff3a3a;
+  margin-right: 6px;
+}
+.btn .Download {
+  color: #fff;
+  border-radius: 40px;
+  background-color: #ff3a3a;
+}

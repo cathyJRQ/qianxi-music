@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网易云音乐</title>
+    <link rel="stylesheet" href="./css/reset.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/prefixfree.min.js"></script>
+</head>
+
+<body>
+    <div class="app" id="app">
+        <!-- 头部 -->
+        <div class="headerBox">
+            <div class="headerBoxTop">
+                <div class="headerleft">
+                    <img class="headerleftImg" src="" alt="">
+                    <p>你知道这首歌居然被这么评论！</p>
+                </div>
+                <div class="headerright">
+                    <p>打开看看</p>
+                    <img class="Rightarrow" src="./img/下载 (1).png" alt="">
+                </div>
+                <div class="line"></div>
+            </div>
+        </div>
+        <!-- 主体 -->
+        <div class="music">
+            <div class="Bejin">
+
+            </div>
+            <!-- 歌词 -->
+            <div class="musicItem">
+                <div class="musicName"></div>
+                <div class="main-box">
+                    <div class="musicText"></div>
+                </div>
+            </div>
+            <div class="together">
+                <span class="animationBox">
+                    <img class="animation" src="./img/obj_wo3DlcOGw6DClTvDisK1_10958309011_6b24_2279_c945_438870d95af399eedec241ec6de097b1.png" alt="">
+                </span>
+                <p>一起听歌</p>
+                <img class="you" src="./img/下载 (1).png" alt="">
+            </div>
+        </div>
+        <!-- 背景 -->
+        <div class="Mask-image"></div>
+        <div class="Mask-overlay"></div>
+        <!-- loading -->
+        <div class="loading-box">
+            <div class="content">
+                <img src="./img/loading.gif" alt="">
+                <span>加载中...</span>
+            </div>
+        </div>
+         <!-- 按钮 -->
+         <footer class="btn">
+            <p class="open">打开</p>
+            <p class="Download">下载</p>
+        </footer>
+        <!-- 音频 -->
+        <audio src="" id="audioBox" preload="metadata"></audio>
+    </div>
+</body>
+<script>
+    (function () {
+        const app = document.querySelector('#app'),
+            HTML = document.documentElement
+        const computed = function computed() {
+            let orien = Math.abs(window.orientation)
+            if (orien === 90) {
+                alert('横屏体验不佳，请您切换到竖屏')
+                app.style.display = 'none'
+                return
+            }
+            app.style.display = 'block'
+            let deviceW = HTML.clientWidth,
+                designW = 375,
+                initialRatio = 100
+            if (deviceW > 540) deviceW = 540
+            let currentRatio = deviceW / designW * initialRatio
+            HTML.style.fontSize = currentRatio + 'px'
+        }
+        computed()
+        window.addEventListener('resize', computed)
+    })();
+</script>
+<script src="./js/api.js"></script>
+<script src="./js/fastclick.js"></script>
+<script src="./js/index.js"></script>
+
+</html>
